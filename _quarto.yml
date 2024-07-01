@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: ./docs  # added so that whenever pages are rendered (`quarto render` in terminal), they are stored in the docs directory
+
+website:
+  title: "My first test website!"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - fun.qmd  # added so that quarto knows we have a new file to render
+      - jupyter_test.ipynb  # added so that quarto knows we have a new file to render
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

@@ -1,0 +1,12 @@
+---
+title: "My first test website!"
+---
+
+This is a Quarto website.
+
+Markdown is supported! Including latex
+
+$$
+a^2 + b^2 = c^2
+$$
+

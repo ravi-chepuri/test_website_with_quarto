@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "jupyter_test.html",
+    "href": "jupyter_test.html",
+    "title": "My first test website!",
+    "section": "",
+    "text": "print('hi')\n\nhi"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My first test website!",
+    "section": "",
+    "text": "This is a Quarto website.\nMarkdown is supported! Including latex\n\\[\na^2 + b^2 = c^2\n\\]"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
