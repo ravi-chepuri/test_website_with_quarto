@@ -1,3 +1,33 @@
 ---
 title: "Fun Stuff"
 ---
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+ROTATE_RIGHT = np.array([[0, 1], 
+                         [-1, 0]])
+
+def iterate(posn_list):
+    new_posn_list = []
+    for i in range(len(posn_list) - 1):
+        curr = posn_list[i]
+        next = posn_list[i+1]
+        diff = next - curr
+        right_perp_diff = ROTATE_RIGHT @ diff
+        intermediate = curr + diff/2 + right_perp_diff/2 if i % 2 == 0 else curr + diff/2 - right_perp_diff/2
+        new_posn_list.extend([curr, intermediate])
+    new_posn_list.append(posn_list[-1])
+    return new_posn_list
+
+init_posn_list = [np.array([0, 0]), np.array([1, 0])]
+
+posn_list = init_posn_list
+for t in range(20):
+    posn_list = iterate(posn_list)
+
+plt.plot(*zip(*posn_list), color='k', lw=1)
+plt.gca().set_aspect('equal', adjustable='box')
+plt.show()
+```

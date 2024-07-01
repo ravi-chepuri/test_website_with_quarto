@@ -14,6 +14,13 @@
     "text": "This is a Quarto website.\nMarkdown is supported! Including latex\n\\[\na^2 + b^2 = c^2\n\\]"
   },
   {
+    "objectID": "fun.html",
+    "href": "fun.html",
+    "title": "Fun Stuff",
+    "section": "",
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\n\nROTATE_RIGHT = np.array([[0, 1], \n                         [-1, 0]])\n\ndef iterate(posn_list):\n    new_posn_list = []\n    for i in range(len(posn_list) - 1):\n        curr = posn_list[i]\n        next = posn_list[i+1]\n        diff = next - curr\n        right_perp_diff = ROTATE_RIGHT @ diff\n        intermediate = curr + diff/2 + right_perp_diff/2 if i % 2 == 0 else curr + diff/2 - right_perp_diff/2\n        new_posn_list.extend([curr, intermediate])\n    new_posn_list.append(posn_list[-1])\n    return new_posn_list\n\ninit_posn_list = [np.array([0, 0]), np.array([1, 0])]\n\nposn_list = init_posn_list\nfor t in range(20):\n    posn_list = iterate(posn_list)\n\nplt.plot(*zip(*posn_list), color='k', lw=1)\nplt.gca().set_aspect('equal', adjustable='box')\nplt.show()"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
